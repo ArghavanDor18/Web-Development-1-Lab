@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: monospace;
+  }
+  
+  #math-box {
+    margin: 20px;
+    padding: 25px;
+    width: 350px;
+    border: 3px solid #111;
+    border-radius: 30px;
+    background-color: rgb(153, 204, 255);
+    box-shadow: 12px 6px 8px rgb(151, 151, 159);
+  }
+  h1, h2 {
+    padding: 5px;
+  }
+  #calc-title {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5em;
+    text-align: center;
+    box-shadow: inset 3px 2px 3px rgb(96, 96, 96)
+  }
+  .operand {
+    margin: 15px 0;
+  }
+  .operand label {
+    display: inline-block;
+    font-size: 18px;
+    text-align: right;
+    width: 70%;
+  }
+  .operand input {
+    font-size: 16px;
+    width: 3em;
+    text-align: center;
+  }
+  
+  #op-buttons {
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  button.operator {
+    font-size: 18px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+  #result-box {
+    margin: 20px 0 20px;
+    padding: 0.5em 0.7em;
+    height: 54px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: inset 3px 2px 3px rgb(96, 96, 96);
+    border-radius: 5px;
+  }
+  #result {
+    height: fit-content;
+  }
+  
+  #history-box {
+    height: fit-content;
+    background-color: rgb(245, 245, 245);
+    box-shadow: inset 3px 2px 3px rgb(96, 96, 96);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  #history {
+    height: 250px;
+    overflow: auto;
+  }
+  #history * {
+    padding: 4.5px;
+    font-size: 12px;
+  }
+  
+  .addition-color {
+    background-color: rgb(153, 255, 255);
+  }
+  .subtraction-color {
+    background-color: rgb(255, 153, 153);
+  }
+  .multiplication-color {
+    background-color: rgb(178, 102, 255);
+  }
+  .division-color {
+    background-color: rgb(255, 178, 102);
+  }
+  .exponent-color {
+    background-color: rgb(255, 255, 102);
+  }
+  .modulo-color {
+    background-color: rgb(255, 153, 204);
+  }
