@@ -79,21 +79,21 @@
     font-size: 12px;
   }
   
-  .addition-color {
+  .operator-addition-color {
     background-color: rgb(153, 255, 255);
   }
-  .subtraction-color {
+  .operator-subtraction-color {
     background-color: rgb(255, 153, 153);
   }
-  .multiplication-color {
+  .operator-multiplication-color {
     background-color: rgb(178, 102, 255);
   }
-  .division-color {
+  .operator-division-color {
     background-color: rgb(255, 178, 102);
   }
-  .exponent-color {
+  .operator-exponent-color {
     background-color: rgb(255, 255, 102);
   }
-  .modulo-color {
+  .operator-modulo-color {
     background-color: rgb(255, 153, 204);
   }
