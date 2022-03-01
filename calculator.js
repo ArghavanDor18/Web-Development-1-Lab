@@ -7,22 +7,22 @@ function operate(op) {
     
 
     switch(op) {
-        case 'addition':
+        case 'add':
             expression = x + ' + ' + y + ' = ' + (x + y);
             break;
-        case 'subtraction':
+        case 'sub':
             expression = x + ' - ' + y + ' = ' + (x - y);
             break;
-        case 'multiplication':
+        case 'mul':
             expression = x + ' * ' + y + ' = ' + (x * y);
             break;
-        case 'division':
+        case 'div':
             expression = x + ' / ' + y + ' = ' + (x / y);
             break;
-        case 'exponent':
+        case 'exp':
             expression = x + ' ^ ' + y + ' = ' + (x ** y);
             break;
-        case 'modulo':
+        case 'mod':
             expression = x + ' % ' + y + ' = ' + (x % y);
             break;
         default:
