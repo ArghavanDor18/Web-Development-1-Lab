@@ -2,12 +2,26 @@
 <html>
 
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <style>
+         #addStyle {
+         background-color: Tomato;
+    }
+
+        #subStyle {
+        background-color: DodgerBlue;
+    }
+
+        #mulStyle {
+        background-color: SlateBlue;
+    }
+
+        #divStyle {
+        background-color: MediumSeaGreen;
+    }
+      </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="calculator.js"></script>
-        <link rel="stylesheet" href="design.css"/>
 
     </head>
 
@@ -26,21 +40,25 @@
             <input type="text" id="y" maxlength="3" />
           </div>
           <div id="op-buttons">
-            <button class="operator-addition-color" id="add">+</button>
-            <button class="operator-subtraction-color" id="sub">-</button>
-            <button class="operator-multiplication-color" id="mul">*</button>
-            <button class="operator-division-color" id="div">/</button>
-            <button class="operator-exponent-color" id="exp">^</button>
-            <button class="operator-modulo-color" id="mod">%</button>
-            <button class="operator-font-size" id="increase">Increase Font</button>
-            <button class="operator-font-size" id="decrease">Decrease Font</button>
+            <button class="add" id="add">+</button>
+            <button class="sub" id="sub">-</button>
+            <button class="mul" id="mul">*</button>
+            <button class="div" id="div">/</button>
+
+
+            <button class="inc_button" id="increase">Increase Fonts</button>
+            <button class="dec_button" id="decrease">Decrease Fonts</button>
+
+            
           </div>
           <div id="result-box">
             <p id="result">(Result)</p>
           </div>
+          <div>Result: <span id="result"> </span></div>
           <div id="history-box">
             <h2>History:</h2>
             <div id="history"></div>
+            <img src="https://picsum.photos/200/300?random=1" alt="" width="100px" height=""> 
           </div>
         </div>
     </body>

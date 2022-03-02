@@ -1,51 +1,98 @@
-let history = []
-function operate(op) {
-    x = parseInt($('#x').val());
-    y = parseInt($('#y').val());
+add = function() { 
+    console.log("add function was called")
+    result = parseInt(jQuery('#operand_1').val()) + parseInt(jQuery('#operand_2').val());
+  
+    text = jQuery('#operand_1').val() + " +   " + jQuery('#operand_2').val() + " = "
+    result = text + result;
+    jQuery('#result').text(result);
+  
+  
+    styled_result = "<span id='addStyle'>" + result + "</span>"; 
     
+    old_div_content = jQuery('#history').html();
+    new_div_content = old_div_content + styled_result + '<br>';
+    jQuery('#history').html(new_div_content); 
+  }
+  
+  
+  
+  
+  sub = function() {
+    result = parseInt(jQuery('#operand_1').val()) - parseInt(jQuery('#operand_2').val());
+  
+    text = jQuery('#operand_1').val() + " - " + jQuery('#operand_2').val() + " = "
+    result = text + result;
+    jQuery('#result').html(result);
+  
+  
+    result = "<span id='subStyle'>" + result + "</span>";
+    old_div_content = jQuery('#history').html();
+    new_div_content = old_div_content + result + '<br>';
+    jQuery('#history').html(new_div_content);
+  }
+  
+  
+  mul = function() {
+    result = parseInt(jQuery('#operand_1').val()) * parseInt(jQuery('#operand_2').val());
+  
+    text = jQuery('#operand_1').val() + " * " + jQuery('#operand_2').val() + " = "
+    result = text + result;
+    jQuery('#result').html(result);
+  
+  
+  
+    result = "<span id='mulStyle'>" + result + "</span>";
+    old_div_content = jQuery('#history').html();
+    new_div_content = old_div_content + result + '<br>';
+    jQuery('#history').html(new_div_content);
+  }
+  
+  div = function() {
+    result = parseInt(jQuery('#operand_1').val()) / parseInt(jQuery('#operand_2').val());
+  
+    text = jQuery('#operand_1').val() + " / " + jQuery('#operand_2').val() + " = "
+    result = text + result;
+    jQuery('#result').html(result);
+  
+  
+    result = "<span id='divStyle'>" + result + "</span>";
+    old_div_content = jQuery('#history').html();
+    new_div_content = old_div_content + result + '<br>';
+    jQuery('#history').html(new_div_content);
+  }
+  
+  show = function() {
+    jQuery('#history').show()
+  }
+  
+  hide = function() {
+    jQuery('#history').hide() 
+  }
 
-    
-
-    switch(op) {
-        case 'add':
-            expression = x + ' + ' + y + ' = ' + (x + y);
-            break;
-        case 'sub':
-            expression = x + ' - ' + y + ' = ' + (x - y);
-            break;
-        case 'mul':
-            expression = x + ' * ' + y + ' = ' + (x * y);
-            break;
-        case 'div':
-            expression = x + ' / ' + y + ' = ' + (x / y);
-            break;
-        case 'exp':
-            expression = x + ' ^ ' + y + ' = ' + (x ** y);
-            break;
-        case 'mod':
-            expression = x + ' % ' + y + ' = ' + (x % y);
-            break;
-        default:
-            expression = 'ERROR'
-            console.log("Error in calculation")
-    }
-    $('#result').html("Result of " + expression);
-    history.unshift(`<div class="item ${op}"-color>${expression}</div>`);
-    $('#history').html(history);
-}
-
-function setup() {
-    $(".operator").click(function(){operate(this.id)})
-    $("#increase").click(function(){
-    $(".item").css("font-size", "20px")
-    $("#decrease").click(function(){
-    $(".item").css("font-size", "-20px")
-    
-    
-
-    })
-}
+  function inc_(){
+    x =$("#history").css("font-size");
+  
+    console.log(parseInt(x));
+    x = parseInt(x);
+    $("#history").css("font-size", (x + 10 )+ "px" );
+  }
+  
+  
+  setup = function() {
+    console.log("setup function was called")
+    jQuery('#add_button').click(add);
+    jQuery('#sub_button').click(sub);
+    jQuery('#mul_button').click(mul);
+    jQuery('#div_button').click(div);
+    jQuery('#show_button').click(show);
+    jQuery('#hide_button').click(hide);
+    jQuery('#inc_button').click(inc_);
+  }
+  
+  jQuery(document).ready(setup); 
 
 
-,$(document).ready(setup));
-}
+
+
+$(document).ready(setup);
+
