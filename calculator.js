@@ -86,7 +86,7 @@ add = function() {
     jQuery('#div_button').click(div);
     jQuery('#show_button').click(show);
     jQuery('#hide_button').click(hide);
-    jQuery('#inc_button').click(inc_);
+    jQuery('#inc_button').click(inc);
   }
   
   jQuery(document).ready(setup); 
