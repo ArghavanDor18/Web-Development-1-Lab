@@ -80,13 +80,13 @@ add = function() {
   
   setup = function() {
     console.log("setup function was called")
-    jQuery('#add_button').click(add);
-    jQuery('#sub_button').click(sub);
-    jQuery('#mul_button').click(mul);
-    jQuery('#div_button').click(div);
-    jQuery('#show_button').click(show);
-    jQuery('#hide_button').click(hide);
-    jQuery('#inc_button').click(inc);
+    jQuery('#add_').click(add);
+    jQuery('#sub_').click(sub);
+    jQuery('#mul_').click(mul);
+    jQuery('#div_').click(div);
+    jQuery('#show').click(show);
+    jQuery('#hide').click(hide);
+    jQuery('#inc_').click(inc);
   }
   
   jQuery(document).ready(setup); 
