@@ -1,8 +1,12 @@
+
+
 add = function() { 
     console.log("add function was called")
     result = parseInt(jQuery('#operand_1').val()) + parseInt(jQuery('#operand_2').val());
   
-    text = jQuery('#operand_1').val() + " +   " + jQuery('#operand_2').val() + " = "
+    text = jQuery('#operand_1').val() + " +   " + jQuery('#operand_2').val() + " = " + " <button class = 'rmv'>remove me!</button>"
+    
+    
     result = text + result;
     jQuery('#result').text(result);
   
@@ -20,7 +24,7 @@ add = function() {
   sub = function() {
     result = parseInt(jQuery('#operand_1').val()) - parseInt(jQuery('#operand_2').val());
   
-    text = jQuery('#operand_1').val() + " - " + jQuery('#operand_2').val() + " = "
+    text = jQuery('#operand_1').val() + " - " + jQuery('#operand_2').val() + " = " + " <button class = 'rmv'>remove me!</button>"
     result = text + result;
     jQuery('#result').html(result);
   
@@ -35,7 +39,7 @@ add = function() {
   mul = function() {
     result = parseInt(jQuery('#operand_1').val()) * parseInt(jQuery('#operand_2').val());
   
-    text = jQuery('#operand_1').val() + " * " + jQuery('#operand_2').val() + " = "
+    text = jQuery('#operand_1').val() + " * " + jQuery('#operand_2').val() + " = " + " <button class = 'rmv'>remove me!</button>"
     result = text + result;
     jQuery('#result').html(result);
   
@@ -50,7 +54,7 @@ add = function() {
   div = function() {
     result = parseInt(jQuery('#operand_1').val()) / parseInt(jQuery('#operand_2').val());
   
-    text = jQuery('#operand_1').val() + " / " + jQuery('#operand_2').val() + " = "
+    text = jQuery('#operand_1').val() + " / " + jQuery('#operand_2').val() + " = " + " <button class= 'rmv'>remove me!</button>"
     result = text + result;
     jQuery('#result').html(result);
   
@@ -68,39 +72,20 @@ add = function() {
   hide = function() {
     jQuery('#history').hide() 
   }
-
-  function inc(){
-    x =$("#history").css("font-size");
   
-    console.log(parseInt(x));
-    x = parseInt(x);
-    $("#history").css("font-size", (x + 10 )+ "px" );
+  rmv_f = function() {
+      jQuery(this).parent().remove();
   }
 
-  function dec(){
-    x = $("#history").css("font-size");
-    console.log(parseInt(x));
-    x = parseInt(x);
-    $("#history").css("font-size", (x - 10) + "px");
-  }
-  
-  
   setup = function() {
     console.log("setup function was called")
-    jQuery('#add_').click(add);
-    jQuery('#sub_').click(sub);
-    jQuery('#mul_').click(mul);
-    jQuery('#div_').click(div);
-    jQuery('#show').click(show);
-    jQuery('#hide').click(hide);
-    jQuery('#inc_').click(inc);
-    jQuery('#dec_').click(dec);
+    jQuery('#add_button').click(add);
+    jQuery('#sub_button').click(sub);
+    jQuery('#mul_button').click(mul);
+    jQuery('#div_button').click(div);
+    jQuery('#show_button').click(show);
+    jQuery('#hide_button').click(hide);
+    jQuery('body').on("click",".rmv",rmv_f);
   }
   
   jQuery(document).ready(setup); 
-
-
-
-
-$(document).ready(setup);
-
