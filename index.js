@@ -4,7 +4,7 @@ function process_response(data){
         $("#results").append(data.results[i].overview + "<br>");
         
         x = data.results[i].poster_path
-        y =`<img src="https://image.tmdb.org/t/p/w500/${x}">`
+        image_html =`<img src="https://image.tmdb.org/t/p/w500/${x}">`
         $("#results").append(image_html + "<br>");
         z = `<button id="${data.results[i].backdrop_path}" class="backdrop_button"> backdrop image!</button>`
         $("#results").append(z + "<br>");
@@ -23,8 +23,8 @@ $.ajax({
 
 function display_back_drop(){
     w = $(this).attr("id");
-    console.log(`<img src="https://image.tmdb.org/t/p/original${w}" width="100"%>`);
-    $("#right_div").html(`<img src="https://image.tmdb.org/t/p/original${w}" width="100%">`)
+    console.log(`<img src="https://image.tmdb.org/t/p/original${w}" width="250"%>`);
+    $("#right_div").html(`<img src="https://image.tmdb.org/t/p/original${w}" width="250%">`)
 }
 
 
