@@ -3,9 +3,9 @@ number_of_pages = null;
 page_size = null;
 receiver_object = null;
 
-function display(page_id, page_size);{
-    for(i = start_index; i < stop_index; i++)
-    $("#results").html(`<h1> display (1, ${page_size})</h1>`)
+function display(page_id, page_size){
+    for(i = start_index; i < stop_index; i++);
+    $("#results").html(`<h1> display (1, ${page_size})</h1>`);
 }
 
 
@@ -58,7 +58,7 @@ function display_back_drop(){
 
 function header_button(){
     w = $(this).attr("id");
-    $("#results").html(`<h1> display (${w}, ${page_size})</h1>`)
+    $("#results").html(`<h1> display (${w}, ${page_size})</h1>`);
     current_page_id = Number(w);
     $("#next").show();
     $("#prev").show();
@@ -66,7 +66,7 @@ function header_button(){
 }
 
 function first(){
-    $("#results").html(`<h1> display (1, ${page_size})</h1>`)
+    $("#results").html(`<h1> display (1, ${page_size})</h1>`);
     current_page_id = 1;
     $("#next").show();
     $("#prev").show();
@@ -74,7 +74,7 @@ function first(){
 }
 
 function last(){
-    $("#results").html(`<h1> display(7, ${page_size})</h1>`)
+    $("#results").html(`<h1> display(7, ${page_size})</h1>`);
     current_page_id = 7;
     $("#next").show();
     $("#prev").show();
@@ -84,19 +84,19 @@ function last(){
 function prev(){
     if(current_page_id > 1)
         current_page_id--;
-        $("#results").html(`<h1> display (${current_page_id}, ${page_size})</h1>`)
+        $("#results").html(`<h1> display (${current_page_id}, ${page_size})</h1>`);
         display(current_page_id, page_size);
 }
 
 function next(){
     if(current_page_id < 7)
         current_page_id++;
-        $("#results").html(`<h1> display (${current_page_id}, ${page_size})</h1>`)
+        $("#results").html(`<h1> display (${current_page_id}, ${page_size})</h1>`);
         display(current_page_id, page_size);
 }
 
 function setup() {
-    $("#find_movie_info").click(call_ajax)
+    $("#find_movie_info").click(call_ajax);
     $("#prev").hide();
     $("select").change(drop_down_menu_has_changed);
     page_size = Number($("option:selected").val());
