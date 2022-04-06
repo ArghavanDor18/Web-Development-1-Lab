@@ -1,9 +1,16 @@
+data = null;
 current_page_id = null;
+page_id = null
 number_of_pages = null;
 page_size = null;
 receiver_object = null;
 
+
+
 function display(page_id, page_size){
+    start_index = page_size * (page_id - 1)
+    stop_index = page_size + (page_size * (page_id - 1))
+    counter = 1;
     for(i = start_index; i < stop_index; i++);
     $("#results").html(`<h1> display (1, ${page_size})</h1>`);
 }
@@ -33,6 +40,24 @@ function process_response(data){
      
 
     }
+}
+
+function paginate_menu(){
+    $("#page_numbers").empty();
+    number_of_pages = Math.ceil(data.results.length / Number(page_size));
+    for (i = 1; i <= number_of_pages; i++) {
+    $("#page_numbers").append(`<span> <button  id="${i}"> ${i} </button>  </span>`);
+  }
+}
+
+function s_(res){
+    $("section").show();
+    data = res
+    page_id = 1
+    $("#page_numbers").empty();
+    paginate_menu();
+    display(page_id, page_size);
+  
 }
 
 function drop_down_menu_has_changed(){
