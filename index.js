@@ -21,7 +21,7 @@ function pagination_menu(){
 
 function process_response(data){
     received_object = data;
-    for(i = 0; i < data.results.length; i++) {
+    for(i = 0; i < page_size; i++) {
         $("#results").append(data.results[i].original_title + "<br>");
         $("#results").append(data.results[i].overview + "<br>");
         
