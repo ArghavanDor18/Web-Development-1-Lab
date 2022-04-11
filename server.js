@@ -17,7 +17,7 @@ app.use(bodyparser.urlencoded({
 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/test",
+mongoose.connect("mongodb+srv://ArghavanDor19:mqxgy0FGtRRNQWiC@cluster0.rtfvc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {useNewUrlParser: true, useUnifiedTopology: true});
 const unicornSchema = new mongoose.Schema({
     name: String,
