@@ -67,3 +67,26 @@ app.post("/findUnicornByFood", function(req, res) {
         res.send((unicorns));
     });
   })
+
+
+  app.post("/findUnicornByWeight", function(req, res) {
+    console.log("req, has been received")
+    console.log(req.body.lowerWeightIsChecked)
+    console.log(req.body.higherWeightIsChecked)
+    console.log(req.body.unicornName)
+
+    if(req.body.lowerWeightIsChecked == "checked")
+        aList.push("lower")
+
+    if(req.body.higherWeightIsChecked == "checked")
+        aList.push("higher")
+
+    unicornModel.find({weight: req.body.unicornWeight}, function(err, unicorns){
+        if (err){
+          console.log("Error " + err);
+        }else{
+          console.log("Data "+ (unicorns));
+        }
+        res.send((unicorns));
+    });
+  })
