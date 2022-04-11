@@ -9,7 +9,7 @@ function findUnicornByName(){
 
     $.ajax(
         {
-            url: "http://localhost:5000/findUnicornByName",
+            url: "https://whispering-depths-17217.herokuapp.com/findUnicornByName",
             type: "POST",
             data: {
                 "unicornName": $("#unicornName").val()
@@ -31,7 +31,7 @@ function findUnicornByFood(){
 
     $.ajax(
         {
-            url: "http://localhost:5000/findUnicornByFood",
+            url: "https://whispering-depths-17217.herokuapp.com/findUnicornByFood",
             type: "POST",
             data: {
                 "appleIsChecked": appleIsChecked,
